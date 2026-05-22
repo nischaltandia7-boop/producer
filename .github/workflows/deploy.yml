@@ -1,4 +1,4 @@
-name: CI-CD
+name: CI/CD
 
 on:
   push:
@@ -12,21 +12,16 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 20
-
-      - run: npm install
-      - run: npm run build
-
-      - name: Login DockerHub
+      - name: Docker Login
         uses: docker/login-action@v3
         with:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Build Image
-        run: docker build -t nischaltandia12345/producer:v10 .
+        run: |
+          docker build -t ${{ secrets.DOCKER_USERNAME }}/producer:20 .
 
       - name: Push Image
-        run: docker push nischaltandia12345/producer:10
+        run: |
+          docker push ${{ secrets.DOCKER_USERNAME }}/producer:20

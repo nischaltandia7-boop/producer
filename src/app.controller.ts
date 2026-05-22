@@ -38,9 +38,10 @@ export class AppController implements OnModuleInit {
     try {
       this.kafkaClient.emit('test',body)
       console.log("msg sent")
+      console.log("ci cd pipeline is done now")
     } catch (error) {
       
     }
-    return {success:true, message: body}
+    return {success:true, message: body ,}
   }
 }

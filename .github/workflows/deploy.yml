@@ -26,7 +26,7 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Build Image
-        run: docker build -t nischaltandia12345/producer:latest .
+        run: docker build -t nischaltandia12345/producer:v10 .
 
       - name: Push Image
-        run: docker push nischaltandia12345/producer:latest
+        run: docker push nischaltandia12345/producer:10

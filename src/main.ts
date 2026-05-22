@@ -10,7 +10,7 @@ async function bootstrap() {
     options: {
       client: {
         clientId: 'service-b',
-        brokers: [process.env.KAFKA_BROKER || 'kafka.kafka.svc.cluster.local:9092'],
+        brokers: ['kafka.kafka.svc.cluster.local:9092'],
       },
 
       consumer: {

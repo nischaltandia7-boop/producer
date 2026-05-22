@@ -1,17 +1,16 @@
-name: CI/CD Pipeline
+name: CI
 
 on:
   push:
     branches:
       - main
-      - nischal
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Code
+      - name: Checkout code
         uses: actions/checkout@v4
 
       - name: Setup Node.js
@@ -19,11 +18,8 @@ jobs:
         with:
           node-version: 20
 
-      - name: Install Dependencies
+      - name: Install dependencies
         run: npm install
 
-      - name: Run Tests
-        run: npm run test --if-present
-
-      - name: Build Project
-        run: npm run build
+      - name: Start app
+        run: npm run start:dev

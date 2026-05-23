@@ -6,7 +6,9 @@ async function bootstrap() {
 
   await app.listen(3000, '0.0.0.0');
 
-  console.log('Producer HTTP server running on port 3000');
+  console.log("hello")
+
+  console.log('Producer HTTP server running on port 3000'); 
 }
 
 bootstrap();

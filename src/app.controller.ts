@@ -12,8 +12,9 @@ export class AppController implements OnModuleInit {
   }
    @Get('send')
    async response(){
-    return {success:true, message:"hii i m the response"}
+    return {success:true, message:"hii i m the responses"}
    }
+
 
   @Post('send')
   async createMessage(@Body() body: any){

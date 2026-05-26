@@ -12,7 +12,7 @@ export class AppController implements OnModuleInit {
   }
    @Get('send')
    async response(){
-    return {success:true, message:"hii i m the responses"}
+    return {success:true, message:"hii i m the response"}
    }
 
 

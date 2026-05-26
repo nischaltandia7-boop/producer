@@ -12,7 +12,8 @@ import { ProducerService } from './app.service';
         options: {
           client: {
             clientId: 'producer-client',
-            brokers: ['kafka.kafka.svc.cluster.local:9092'],
+           // brokers: ['kafka.kafka.svc.cluster.local:9092'],
+           brokers: ['localhost:9092'],
           },
           consumer: {
             groupId: 'producer-group',

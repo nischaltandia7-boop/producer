@@ -10,7 +10,10 @@ export class AppController implements OnModuleInit {
   async onModuleInit() {
     await this.kafkaClient.connect();
   }
-
+   @Get('send')
+   async response(){
+    return {success:true, message:"hii i m the response"}
+   }
 
   @Post('send')
   async createMessage(@Body() body: any){

@@ -4,17 +4,15 @@ import { Inject } from '@nestjs/common';
 
 @Injectable()
 export class ProducerService implements OnModuleInit {
-  constructor(
-    @Inject('KAFKA_SERVICE') private readonly client: ClientKafka,
-  ) {}
+  // constructor(
+  //   @Inject('KAFKA_SERVICE') private readonly client: ClientKafka,
+  // ) {}
 
-  async onModuleInit() {
-    await this.client.connect();
+  onModuleInit() {
+    return "massages sent"
   }
 
   sendMessage() {
-    return this.client.emit('test', {
-      value: 'hello from producer',
-    });
+    return "message sent"
   }
 }
